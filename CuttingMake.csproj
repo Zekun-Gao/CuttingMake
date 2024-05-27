@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Authors>GaoZeKun</Authors>
+    <Copyright>V1.0</Copyright>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="frmNewOrder.Designer.cs~RF27c1cf8.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocX" Version="2.5.0" />
+    <PackageReference Include="NPOI" Version="2.4.1" />
+    <PackageReference Include="System.Data.OleDb" Version="8.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Automation.BDaq">
+      <HintPath>bin\Debug\net8.0-windows7.0\Automation.BDaq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>bin\Debug\net8.0-windows7.0\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word">
+      <HintPath>bin\Debug\net8.0-windows7.0\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="office">
+      <HintPath>bin\Debug\net8.0-windows7.0\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="ZPLPrint">
+      <HintPath>bin\Debug\net8.0-windows7.0\ZPLPrint.dll</HintPath>
+    </Reference>
+    <Reference Include="ZPLPrintDLL">
+      <HintPath>bin\Debug\net8.0-windows7.0\ZPLPrintDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing">
+      <HintPath>bin\Debug\net8.0-windows7.0\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>bin\Debug\net8.0-windows7.0\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="frmNewSCito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmNewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+</Project>
